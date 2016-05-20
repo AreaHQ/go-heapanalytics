@@ -1,5 +1,7 @@
 # go-heapanalytics
 
+[![Codeship Status for AreaHQ/go-heapanalytics](https://codeship.com/projects/545fb080-00da-0134-b0c6-0218c6b64764/status?branch=master)](https://codeship.com/projects/153352)
+
 Provides a simple adapter for using the heap analytics API. See the [heap documentation](https://heapanalytics.com/docs/server-side) for information on the API covered.
 
 [Go Docs](https://godoc.org/github.com/AreaHQ/go-heapanalytics)
