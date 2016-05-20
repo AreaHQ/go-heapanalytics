@@ -1,6 +1,6 @@
 # go-heapanalytics
 
-Provides a simple adapter for using the heap analytics API. See https://heapanalytics.com/docs/server-side for information on the API covered.
+Provides a simple adapter for using the heap analytics API. See the [heap documentation](https://heapanalytics.com/docs/server-side) for information on the API covered.
 
 [Go Docs](https://godoc.org/github.com/AreaHQ/go-heapanalytics)
 
