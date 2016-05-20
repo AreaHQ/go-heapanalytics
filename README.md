@@ -12,11 +12,15 @@ It's nice and clean as nil or blank values do not need to be passed in where def
 
 Some predefined options have been setup as listed below.
 
-### URL ([source](https://github.com/AreaHQ/go-heapanalytics/blob/master/client.go#L27))
+### URL 
+
+([source](https://github.com/AreaHQ/go-heapanalytics/blob/master/client.go#L27))
 
 Allows you to customise the client base url used by the adapter.
 
-### HttpClient ([source](https://github.com/AreaHQ/go-heapanalytics/blob/master/client.go#L35), [example](#with-httpclient-option))
+### HttpClient 
+
+([source](https://github.com/AreaHQ/go-heapanalytics/blob/master/client.go#L35), [example](#with-httpclient-option))
 
 Allows you to customise the http client used by the adapter.
 
