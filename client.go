@@ -72,8 +72,8 @@ func (c *Client) Track(identity, event string, properties map[string]interface{}
 	return c.send(e, c.pathTrack)
 }
 
-// Identify posts an API request to the "user properties" API
-func (c *Client) UserProperties(identity string, properties map[string]interface{}) error {
+// Identify posts an API request to the "add user properties" API
+func (c *Client) AddUserProperties(identity string, properties map[string]interface{}) error {
 	e := NewEvent(c.appId, identity, "", properties)
 	return c.send(e, c.pathUserProperties)
 }

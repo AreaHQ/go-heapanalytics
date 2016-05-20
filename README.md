@@ -20,13 +20,15 @@ Allows you to customise the client base url used by the adapter.
 
 ### HttpClient 
 
-([source](https://github.com/AreaHQ/go-heapanalytics/blob/master/client.go#L35), [example](#with-httpclient-option))
+[source](https://github.com/AreaHQ/go-heapanalytics/blob/master/client.go#L35), [example](#track-with-httpclient-option)
 
 Allows you to customise the http client used by the adapter.
 
 ## Examples
 
-### Default parameters:
+Below is example code for using the adapter.
+
+### Track using default parameters:
 
 ```go
 package main
@@ -56,7 +58,7 @@ func main() {
 }
 ```
 
-### With HttpClient Option:
+### Track with HttpClient Option:
 
 ```go
 package main
@@ -88,4 +90,38 @@ func main() {
 		fmt.Println("Event sent.")
 	}
 }
+```
+
+### Add user properties using default parameters
+
+```go
+package main
+
+import (
+	"fmt"
+	"net/http"
+
+	"github.com/AreaHQ/go-heapanalytics"
+)
+
+func main() {
+	// test id used in documentation
+	appID := "11"
+
+	// this may be a custom client that you're reusing
+	httpClient := http.DefaultClient
+
+	c := heapanalytics.NewClient(appID, heapanalytics.HttpClient(httpClient))
+
+	identity := "my@identifier.net"
+	properties := map[string]interface{}{"test_prop": "test_val"}
+
+	err := c.AddUserProperties(identity, properties)
+	if err != nil {
+		fmt.Printf("Error sending track: %s", err.Error())
+	} else {
+		fmt.Println("User properties sent.")
+	}
+}
+
 ```

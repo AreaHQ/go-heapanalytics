@@ -81,7 +81,7 @@ func TestTrackSendsCorrectRequest(t *testing.T) {
 	assert.NoError(t, err)
 }
 
-func TestUserPropertiesSendsCorrectRequest(t *testing.T) {
+func TestAddUserPropertiesSendsCorrectRequest(t *testing.T) {
 	type expectedBodyFormat struct {
 		AppId      string                 `json:"app_id"`
 		Identity   string                 `json:"identity"`
@@ -113,6 +113,6 @@ func TestUserPropertiesSendsCorrectRequest(t *testing.T) {
 	c := NewClient(expectedAppID)
 	c.url = ts.URL
 
-	err := c.UserProperties(expectedIdentity, expectedProperties)
+	err := c.AddUserProperties(expectedIdentity, expectedProperties)
 	assert.NoError(t, err)
 }
