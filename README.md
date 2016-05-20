@@ -2,6 +2,8 @@
 
 Provides a simple adapter for using the heap analytics API. See https://heapanalytics.com/docs/server-side for information on the API covered.
 
+[Go Docs](https://godoc.org/github.com/AreaHQ/go-heapanalytics)
+
 ## Client options
 
 There are a number of client options that can be set. 
