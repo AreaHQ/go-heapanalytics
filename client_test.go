@@ -2,10 +2,9 @@ package heapanalytics
 
 import (
 	"encoding/json"
-	// "log"
+	"fmt"
 	"net/http"
 	"net/http/httptest"
-	// "reflect"
 	"testing"
 	"time"
 
@@ -115,4 +114,47 @@ func TestAddUserPropertiesSendsCorrectRequest(t *testing.T) {
 
 	err := c.AddUserProperties(expectedIdentity, expectedProperties)
 	assert.NoError(t, err)
+}
+
+func ExampleTrack() {
+	// test id used in documentation
+	appID := "11"
+
+	// this may be a custom client that you're reusing
+	httpClient := http.DefaultClient
+
+	c := NewClient(appID, HttpClient(httpClient))
+
+	identity := "my@identifier.net"
+	event := "test_event"
+	properties := map[string]interface{}{"test_prop": "test_val"}
+
+	err := c.Track(identity, event, properties)
+	if err != nil {
+		fmt.Printf("Error sending track: %s", err.Error())
+	} else {
+		fmt.Println("Event sent.")
+	}
+	// Output: Event sent.
+}
+
+func ExampleAddUserProperties() {
+	// test id used in documentation
+	appID := "11"
+
+	// this may be a custom client that you're reusing
+	httpClient := http.DefaultClient
+
+	c := NewClient(appID, HttpClient(httpClient))
+
+	identity := "my@identifier.net"
+	properties := map[string]interface{}{"test_prop": "test_val"}
+
+	err := c.AddUserProperties(identity, properties)
+	if err != nil {
+		fmt.Printf("Error sending track: %s", err.Error())
+	} else {
+		fmt.Println("User properties sent.")
+	}
+	// Output: User properties sent.
 }
